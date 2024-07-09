@@ -1,33 +1,51 @@
 
-function generateNumberArray(min, max) {
-    let start_numbers = [];
+function generateNumbersArray(min, max) {
+    let start_numbersArray = [];
     let randomNum;
     const maxNum = 5;
 
-    while(start_numbers.length < maxNum){
+    while(start_numbersArray.length < maxNum){
             // Genera cella casuale nel range di difficoltà
             randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-            if(!start_numbers.includes(randomNum)){
+            if(!start_numbersArray.includes(randomNum)){
                 //PUSHO NELL'ARRAY IN NUMERO CASUALE GENERATO SE NON è UN DUPLICATO
-                start_numbers.push(randomNum);
+                start_numbersArray.push(randomNum);
             }
     }
-return start_numbers.join(" - ");
+return start_numbersArray.join(' - ');
 
 }
 
-// RICHIAMO L'ELEMENTO DAL DOM
-let numeri = document.getElementById('numbers');
+function startGame(){
 
-// INIETTO L'ARRAY NEL DOM
-numeri.innerText = generateNumberArray(1, 1000);
+    // NASCONDO IL BOTTONE
+    btn.style.display = 'none';
+
+    // RICHIAMO L'ELEMENTO DAL DOM
+    let numeri = document.getElementById('numbers');
+    
+    // INIETTO L'ARRAY NEL DOM
+    numeri.innerText = generateNumbersArray(1, 1000);
+    
+    
+    // CREO UN TIMOUT PER FAR SPARIRE I NUMERI DOPO 30 SECONDI 
+    setTimeout(() => {
+        // NASCONDO GLI ELEMENTI 
+        numeri.style.display = "none"; 
+        // 30 SECONDI TI TIMEOUT
+    }, 30000); 
+}
+
+// RECUPERO IL BUTTON
+const btn = document.getElementById('start');
+
+// FUNZIONE ANONIMA PER IL BUTTON
+btn.addEventListener('click', function(){
+
+    // CHIAMO LA FUNZIONE CHE MI FA COMINCIARE LA PARTITA
+    startGame();
+})
 
 
-// CREO UN TIMOUT PER FAR SPARIRE I NUMERI DOPO 30 SECONDI 
-setTimeout(() => {
-    // NASCONDO GLI ELEMENTI 
-    numeri.style.display = "none"; 
-    // 30 SECONDI TI TIMEOUT
-  }, 30000); 
 
 
