@@ -7,3 +7,12 @@ Consigli del giorno:
 Pensate prima in italiano.
 Dividete in piccoli problemi la consegna.
 Individuate gli elementi di cui avete bisogno per realizzare il programma.
+
+
+SUDDIVIDO IL PROBLEMA IN SOTTOPROBLEMI
+
+1 - Creo una funzione per generare un numero casuale compreso in un intervallo specifico 
+2 - Creo una funzione per visualizzare i numeri casuali 
+3 - faccio partire un timer di 30 secondi per quei numeri 
+4 - Creo la funzione per il gioco
+5 - Faccio vedere il risultato della partita giocata 
