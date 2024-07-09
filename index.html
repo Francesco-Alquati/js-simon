@@ -8,8 +8,17 @@
     <title>JS-Simon</title>
 </head>
 <body>
-    <button id="start" class=" btn btn-primary btn-lg position-absolute top-50 start-50 translate-middle">start</button>
-    <div id="numbers" class="text-center fs-1"></div>
+    <main>
+        <button id="start" class="btn btn-primary p-5 fs-1 position-absolute top-50 start-50 translate-middle">start</button>
+        <div id="numbers" class="text-center text-white fs-1 position-absolute top-50 start-50 translate-middle"></div>
+    </main>
+    <footer>
+        <div class="position-absolute top-50 start-50 translate-middle">
+            <div id="score" class="text-center text-white mt-4 fs-1"></div>
+            <div id="guessed-numbers" class="text-center text-white mt-4 fs-1"></div>
+            <div id="wrong-answer" class="text-center text-white mt-4 fs-1"></div>
+        </div>
+    </footer>
     <script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>
