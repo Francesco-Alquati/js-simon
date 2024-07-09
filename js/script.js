@@ -16,8 +16,18 @@ return start_numbers.join(" - ");
 
 }
 
+// RICHIAMO L'ELEMENTO DAL DOM
 let numeri = document.getElementById('numbers');
 
+// INIETTO L'ARRAY NEL DOM
 numeri.innerText = generateNumberArray(1, 1000);
+
+
+// CREO UN TIMOUT PER FAR SPARIRE I NUMERI DOPO 30 SECONDI 
+setTimeout(() => {
+    // NASCONDO GLI ELEMENTI 
+    numeri.style.display = "none"; 
+    // 30 SECONDI TI TIMEOUT
+  }, 30000); 
 
 
