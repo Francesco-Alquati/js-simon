@@ -27,7 +27,7 @@ function startGame(){
     const numbersElement = document.getElementById('numbers');
 
     // RICHIAMO LA FUNZIONE DENTRO UNA CONST
-    const numbersArray = generateNumbersArray(1, 1000);
+    const numbersArray = generateNumbersArray(1, 100);
 
     // INIETTO NEL DOM IL RISULTATO DELLA FUNZIONE 
     numbersElement.innerText = numbersArray.join(' - ');
@@ -38,10 +38,10 @@ function startGame(){
         // NASCONDO GLI ELEMENTI 
         numbersElement.style.display = "none";
         // 30 SECONDI TI TIMEOUT
-    }, 2000); 
+    }, 30000); 
 
     // FACCIO APPARIRE IL PROMPT UN SECONDO DOPO CHE I NUMERI SONO SPARITI
-    setTimeout(userInputNumbers, 3000, numbersArray);
+    setTimeout(userInputNumbers, 32000, numbersArray);
 
 }
 
@@ -78,14 +78,11 @@ function result(guessedNumbers, wrongGuesses, score){
     scoreElement.innerHTML = `Il tuo punteggio è : <span class="green">${score}</span>`
 
     guessedNumbersElement = document.getElementById('guessed-numbers')
-    guessedNumbersElement.innerHTML = `Numeri indovinati: [ ${guessedNumbers} ]`;
+    guessedNumbersElement.innerHTML = `Numeri indovinati: [ ${guessedNumbers.join(' , ')} ]`;
 
     wrongGuessesElement = document.getElementById('wrong-answer')
     wrongGuessesElement.innerHTML = `Numeri sbagliati: <span class="red">${wrongGuesses}</span>`;
-    
 }
-
-
 
 // AGGIUNGO L'EVENTLISTENER AL CLICK DEL BUTTON
 document.getElementById('start').addEventListener('click', startGame);
